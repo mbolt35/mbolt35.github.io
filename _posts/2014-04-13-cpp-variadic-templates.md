@@ -16,7 +16,7 @@ struct tcontainer {
   T4 d;
 };
 ```
-Besides being horrific to look at and a pain to maintain, it limits the implementer to, in our case 4, types. This type of implementation always reminds me the first time I realized that the Action<T> was implemented with **16** [variations](http://msdn.microsoft.com/en-us/library/dd402872%28v=vs.110%29.aspx). _Yikes._  
+Besides being horrific to look at and a pain to maintain, it limits the implementer to, in our case 4, types. This type of implementation always reminds me the first time I realized that the `Action<T>` was implemented with **16** [variations](http://msdn.microsoft.com/en-us/library/dd402872%28v=vs.110%29.aspx). _Yikes._  
   
 ### _Varia-wat?_
   
@@ -120,6 +120,7 @@ Let's take a look at another example, this time using a class/struct. For all in
       T value;
     };
 	```
+
 Now, let's create a factory method so we can let type inference do it's thing.  
 ```cpp
 // creates a new container instance using the values provided
@@ -137,7 +138,7 @@ int main(int argc, const char* argv[]) {
 }
 ```
   
-#### _Access `value` Fields_
+### _Access `value` Fields_
 
   
 Now that we can create an instance of our container, you'll immediately notice that if you print out the `value` field, it will output the `std::string` instance in the first element of our container creation `("hello")`. Since our `container<T, Ts...>` class uses the same field name (`value`) for each sub-class, then in order to extract a specific value of type `T`, we'll need pick the subclass that matches our desired value, cast our container, and _then_ access the `value` field. This is somewhat difficult to explain accurately, so here's an example to clarify:  
