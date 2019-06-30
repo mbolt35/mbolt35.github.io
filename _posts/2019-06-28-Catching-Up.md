@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Catching Up
+image: /img/terminator.jpg
 ---
 ### Life
 
