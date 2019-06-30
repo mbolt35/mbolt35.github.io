@@ -18,7 +18,7 @@ struct tcontainer {
 ```
 Besides being horrific to look at and a pain to maintain, it limits the implementer to, in our case 4, types. This type of implementation always reminds me the first time I realized that the `Action<T>` was implemented with **16** [variations](http://msdn.microsoft.com/en-us/library/dd402872%28v=vs.110%29.aspx). _Yikes._  
   
-### _Varia-wat?_
+### Varia-wat?
   
 Now there is a syntax that allows us to compress the N types down to a single _"Packed Parameter"_ using the _splat_ (...) syntax. Here is a very basic example:  
 ```cpp
@@ -137,8 +137,8 @@ int main(int argc, const char* argv[]) {
   return 0;
 }
 ```
-  
-### _Access `value` Fields_
+
+### Access `value` Fields
 
   
 Now that we can create an instance of our container, you'll immediately notice that if you print out the `value` field, it will output the `std::string` instance in the first element of our container creation `("hello")`. Since our `container<T, Ts...>` class uses the same field name (`value`) for each sub-class, then in order to extract a specific value of type `T`, we'll need pick the subclass that matches our desired value, cast our container, and _then_ access the `value` field. This is somewhat difficult to explain accurately, so here's an example to clarify:  
@@ -174,7 +174,7 @@ double d_value = static_cast<container<double, float>&>(c).value;
 float f_value = static_cast<container<float>&>(c).value;
 ```
 
-#### _Indexed Approach_
+### Indexed Approach
 
 Based on the above code to extract the desired `value` from our container, it seems that an implementer would have to know a lot about the implementation details of the container in order to actually use it. Let's provide an additional utility that will allow us to specify an index representing which type we'd like to access. We'll need to create two more template classes such that we can dive into the subclasses, and reduce the index until we hit `0`. Just like our _terminator_ class for container, we'll also need a specialized template for the `0-case`.  
 ```cpp
@@ -248,7 +248,7 @@ typename container_index<index, C>::type get(C& p_container) {
   return static_cast<container_type&>(p_container).value;
 }
 ```
-#### _Implementation_
+### Implementation
 
 Now that we have our `get` method, we can use it to extract the specific values. Also, remember that templates are a compile-time construct, so incorrectly assuming a type will yield a compile-time error (a helpful one at that!"). Here's the example use:  
 ```cpp
