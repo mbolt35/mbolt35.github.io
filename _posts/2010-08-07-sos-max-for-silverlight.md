@@ -13,17 +13,14 @@ However, because Silverlight has some pretty annoying security policies when it 
 *   Select the **Silverlight** tab and check the option that says "Enable running application out of the browser"
 
 [![](http://2.bp.blogspot.com/_yO39pG0HdLE/TF27dhgkI6I/AAAAAAAAACk/_Tiptox_Jog/s320/silver-light1.png)](http://2.bp.blogspot.com/_yO39pG0HdLE/TF27dhgkI6I/AAAAAAAAACk/_Tiptox_Jog/s1600/silver-light1.png)
-
-  
-
 *   Then click the now enabled "Out-of-Browser Settings..." button.
 *   Check the option that says "Require elevated trust when running outside the browser."
 
 [](http://4.bp.blogspot.com/_yO39pG0HdLE/TF26yzWldVI/AAAAAAAAACc/hSnO1wLMBt4/s1600/silver-light1.png) [![](http://1.bp.blogspot.com/_yO39pG0HdLE/TF24wW6MBmI/AAAAAAAAACM/LY1n6fwttxI/s400/silver-light2.png)](http://1.bp.blogspot.com/_yO39pG0HdLE/TF24wW6MBmI/AAAAAAAAACM/LY1n6fwttxI/s1600/silver-light2.png)  
-
 *   Press "OK"
 
 Now you should be all set to go... 
+
 [![](http://2.bp.blogspot.com/_yO39pG0HdLE/TF25Okm80NI/AAAAAAAAACU/JjgOe7-QtYc/s400/silverlight3.png)](http://2.bp.blogspot.com/_yO39pG0HdLE/TF25Okm80NI/AAAAAAAAACU/JjgOe7-QtYc/s1600/silverlight3.png)
 
 Hope you find this useful - The source is written under the Apache License, so you can feel free to use it how you want.

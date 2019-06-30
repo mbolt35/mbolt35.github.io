@@ -1,7 +1,7 @@
 # --- General options --- #
 
 # Name of website
-title: Decent Software for Modern Technology
+title: Home
 
 # Short description of your site
 description: Keeping up with the fast paced world of software design, planning, and implementation.
@@ -20,15 +20,14 @@ url: "https://blog.bolt-software.com"
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
   Resources:
     - Ben Jordan's Blog: "http://thegoldenmule.com/blog/"
     - RJ Lorimer's Blog: "http://realjenius.com/"
-  Author's home: "http://blog.bolt-software.com"
+  About Me: "aboutme"
 
 # Image to show in the navigation bar - image must be a square (width = height)
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/img/avatar-icon.png"
+# avatar: "/img/avatar-icon.png"
 
 # If you want to have an image logo in the top-left corner instead of the title text,
 # then specify the following parameter
@@ -38,20 +37,31 @@ avatar: "/img/avatar-icon.png"
 
 # Personalize the colors in your website. Colour values can be any valid CSS colour
 
-navbar-col: "#F5F5F5"
-navbar-text-col: "#404040"
-navbar-children-col: "#F5F5F5"
+#navbar-col: "#F5F5F5"
+# navbar-text-col: "#404040"
+# navbar-children-col: "#F5F5F5"
+# page-col: "#FFFFFF"
+# link-col: "#008AFF"
+# hover-col: "#0085A1"
+# footer-col: "#F5F5F5"
+# footer-text-col: "#777777"
+# footer-link-col: "#404040"
+
+navbar-col: "#4cb8e6"
+navbar-text-col: "#F5F5F5"
+navbar-children-col: "#505050"
 page-col: "#FFFFFF"
-link-col: "#008AFF"
-hover-col: "#0085A1"
-footer-col: "#F5F5F5"
-footer-text-col: "#777777"
-footer-link-col: "#404040"
+link-col: "#4cb8e6"
+hover-col: "#4cb8e6"
+footer-col: "#505050"
+footer-text-col: "#F5F5F5"
+footer-link-col: "#4cb8e6"
 
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
 
-# navbar-img: "/img/bgimage.png"
+navbar-img: "/img/back.png"
+navbar-small-img: "/img/small-bg.png"
 # footer-img: "/img/bgimage.png"
 # page-img: "/img/bgimage.png"
 

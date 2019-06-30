@@ -2,7 +2,7 @@
 layout: post
 title: AIR loadBytes() Bites
 ---
-I have run into an annoying issue involving Adobe AIR versions 1.5.X and 2.0. While I am aware that there are some differences (security wise) between the playerglobal APIs and the airglobal APIs, I wouldn't have guessed that what I'm about to describe to be the "valid" behavior.  
+I have run into an annoying issue involving Adobe AIR versions 1.5.X and 2.0. While I am aware that there are some differences (security wise) between the playerglobal APIs and the airglobal APIs, I wouldn't have guessed that what I'm about to describe to be the "valid" behavior.
 
 ### The Steps:
 

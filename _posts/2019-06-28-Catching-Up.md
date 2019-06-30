@@ -1,10 +1,7 @@
 ---
 layout: post
 title: Catching Up
-image: /img/terminator.jpg
 ---
-### Life
-
 Based on the date of my last blog post, it’s been quite a while since I’ve shared anything here. Oh, but how the times are changing, and while this space has remained quiet, I can assure you that my life has been the complete opposite. During the “blog blackout,” I became a father of _three_, built a new house, lost my two best friends (my doggos Cooper and Annie), and lost my job due to downsizing. The perfect emotional curvature of love, possession, heartbreak, and loss, right? The good news is that I am here, I made it; the storm has mostly subsided and while the emotional swings of life can be debilitating, I feel refreshed and free from the proverbial shackles of the “daily grind” (at least for now).
 
 ### Enklu
