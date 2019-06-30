@@ -41,7 +41,7 @@ In the AS3 code, we're simply performing a regular expression find/replace for a
 ```actionscript
 return data[ arguments[1] ];
 ```
-  ### In C#
+### In C#
 ```csharp
 Person person = new Person("Matt Bolt", 27);
 string str = "My name is ${Name}. I am ${Age} years old.";
