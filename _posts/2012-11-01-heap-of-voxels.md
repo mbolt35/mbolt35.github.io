@@ -35,6 +35,7 @@ I spent a lot of time tweaking the thread counts, re-using previously allocated 
 Of course, after years of being bitten in the ass by nagging concurrency issues, I started there. Low and behold, switching to a single background thread would avoid the horrible heap error, but the performance was miserable. On the bright side, at least, at that point, I could fire up the Unity Profiler, and see that the state of the garbage collector was constantly in "Oh Shit" mode. The problem was right in front of my face the entire time, and it was the simplest phase of the entire pipeline: Geometry -> Mesh
 
 [![](http://2.bp.blogspot.com/-TukTFFDHDeQ/UJH_7XG9mMI/AAAAAAAAAKo/7QzkbEBZJV0/s400/pic1.png)](http://2.bp.blogspot.com/-TukTFFDHDeQ/UJH_7XG9mMI/AAAAAAAAAKo/7QzkbEBZJV0/s1600/pic1.png)
+
 _Screenshot when I thought I was at 60 fps, but moments later, it took a nose dive._
 
 Thinking back to my first approach, having each `Thread` generate a part of the world isn't _really_ an over-the-top use of concurrency. It's not like I was creating hundreds of threads. I was simply using a pool of 3-4 consumer threads and that's it! Even after I switched to using single background thread, the garbage collector was **still** sucking wind! Why?
