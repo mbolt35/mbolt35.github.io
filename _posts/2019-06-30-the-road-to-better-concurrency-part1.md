@@ -2,7 +2,7 @@
 layout: post
 title: "The Road to Better Concurrency: Part 1"
 ---
-About 6 years ago, well into my professional software career, [R.J. Lorimer](http://realjenius.com), a friend and work colleague, casually drops mention of a Java library named **Akka**. It was in context to a discussion we were having about a scheduling/dispatch library we were using at the time, [Hawt Dispatch](https://github.com/fusesource/hawtdispatch). It is a rare thing to discover joy in working with specific APIs, but I doted over the elegance of **Hawt** and the powerful simplicity of it. R.J. had noted how the dispatching had an implementation in [Akka](https://akka.io/), an implementation of the **Actor** model for the JVM. I followed up briefly after that conversation, but it was the end of the day and the mention of **Erlang** had be spooked. It would be a few years before I dove deeper into Actors.
+About 6 years ago, well into my professional software career, [R.J. Lorimer](http://realjenius.com), a friend and work colleague, casually drops mention of a Java library named **Akka**. It was in context to a discussion we were having about a scheduling/dispatch library we were using at the time, [Hawt Dispatch](https://github.com/fusesource/hawtdispatch). It is a rare thing to discover joy in working with specific APIs, but I doted over the elegance of **Hawt** and the powerful simplicity of it. R.J. had noted how the dispatching had an implementation in [Akka](https://akka.io/), an implementation of the **actor** model for the JVM. I followed up briefly after that conversation, but it was the end of the day and the mention of **Erlang** had me spooked. It would be a few years before I dove deeper into actors.
 
 ### Actors
 
