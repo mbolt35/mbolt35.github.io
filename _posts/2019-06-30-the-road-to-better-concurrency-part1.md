@@ -1,8 +1,14 @@
 ---
 layout: post
-title: "Concurrency, Actors, and Hollywood: Part 1"
+title: "The Road to Better Concurrency: Part 1"
 ---
-A computational model once thought to be only implementable by the notable Erlang neckbeard wizards, "Actors" have become popular discussion point when it comes to concurrency and modern day computer languages. In this series of posts, we'll cover the problem areas of writing concurrent code in classic object oriented languages like Java and C#, and take a look at what has been done to "improve" concurrency as a language component. We'll then focus in on "Actors," and how they provide simplistic approach to concurrency at the expense of verbosity. Finally, we'll talk about `Hollywood`, a project geared towards reducing the verbosity requirement for Actors. However, before we get there, let's start with the "old school" object oriented approach to concurrency and shared memory access to understand the importance of this topic in the first place.
+About 6 years ago, well into my professional software career, [R.J. Lorimer](http://realjenius.com), a friend and work colleague, casually drops mention of a Java library named **Akka**. It was in context to a discussion we were having about a scheduling/dispatch library we were using at the time, [Hawt Dispatch](https://github.com/fusesource/hawtdispatch). It is a rare thing to discover joy in working with specific APIs, but I doted over the elegance of **Hawt** and the powerful simplicity of it. R.J. had noted how the dispatching had an implementation in [Akka](https://akka.io/), an implementation of the **Actor** model for the JVM. I followed up briefly after that conversation, but it was the end of the day and the mention of **Erlang** had be spooked. It would be a few years before I dove deeper into Actors.
+
+### Actors
+
+A computational model once thought to be only implementable by the notable Erlang neckbeard wizards, "Actors" have become popular discussion point when it comes to concurrency and modern day computer languages. In this series of posts, we'll cover the problem areas of writing concurrent code in classic object oriented languages like Java and C#, and take a look at what has been done to "improve" concurrency as a language component. We'll focus in on **actors**, and how they provide simplistic approach to concurrency at the expense of verbosity. We'll look into **software transactional memory** as a solution for writing concurrent code and languages like Clojure, which has built-in STM. Finally, we'll compare each approach, provide examples of each, and discuss how we might collectively travel a proverbial road towards a better system of concurrency. 
+
+However, before we get there, let's start with the "old school" object oriented approach to concurrency and shared memory access to understand the importance of this topic in the first place.
 
 ### Object Oriented Concurrent Utilities
 Writing highly concurrent code could involve layers of asynchronous operations that require _efficient_ shared memory access, all of which the developer has to orchestrate. How?
@@ -122,7 +128,7 @@ Absolutely. Just like any programming idiom or pattern, it's important to unders
 
 Unfortunately, you do still have to implement concurrency primitives where you are sharing memory. So, it does seem like we've made an improvement, but we're still far away from being able to completely get rid of locking and other concurrency primitives.
 
-## Next Week, Part 2
+## Better Concurrency: Part 2
 We'll dive deeper into the relationship in the terminology `asynchronous` and `concurrent`. We'll also discuss how an intelligent `Scheduler` can organize `asynchronous` work to maximize `concurrency`, and how we can leverage flow control with a scheduler to create more efficient concurrent code and which platforms have taken advantage of this.
 
-This should hopefully bring us to `Actors` and how they fit into the big picture. 
+We're going to dive deep into the rabbit hole and discover the truth: There is no spoon. 
