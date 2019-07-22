@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "The Road to Better Concurrency: Part 1"
+redirect_from: 
+  - /2019-06-30-concurrency-actors-hollywood-part1
+  - /2019-06-30-concurrency-actors-hollywood-part1/
 ---
 About 6 years ago, well into my professional software career, [R.J. Lorimer](http://realjenius.com), a friend and work colleague, casually drops mention of a Java library named **Akka**. It was in context to a discussion we were having about a scheduling/dispatch library we were using at the time, [Hawt Dispatch](https://github.com/fusesource/hawtdispatch). It is a rare thing to discover joy in working with specific APIs, but I doted over the elegance of **Hawt** and the powerful simplicity of it. R.J. had noted how the dispatching had an implementation in [Akka](https://akka.io/), an implementation of the **actor** model for the JVM. I followed up briefly after that conversation, but it was the end of the day and the mention of **Erlang** had me spooked. It would be a few years before I dove deeper into actors.
 
@@ -47,16 +50,17 @@ private ConcurrentDictionary<string, int> _map = new ConcurrentDictionary<string
 
 public void SetValue(string key, int value) 
 {
-	lock(_map) {
-	    // Check to see if key exists. If so, do nothing
-	    if (_map.ContainsKey(key))
-	    {
-	        return;
-	    }
+    lock(_map) 
+    {
+        // Check to see if key exists. If so, do nothing
+        if (_map.ContainsKey(key))
+        {
+            return;
+        }
 
-	    // Set the Value
-	    _map[key] = value;
-	}
+        // Set the Value
+        _map[key] = value;
+    }
 }
 ```
 > But couldn't we just use a regular `Dictionary<K, V>` here if we're going to lock? 
@@ -72,7 +76,7 @@ private ConcurrentDictionary<string, int> _map = new ConcurrentDictionary<string
 
 public void SetValue(string key, int value) 
 {
-	var didSetValue = _map.TryAdd(key, value);
+    var didSetValue = _map.TryAdd(key, value);
 }
 ```
 This will atomically set the `value` for a specific `key` and return `true` if the `key` was set, and `false` if the key already existed. 
@@ -80,7 +84,7 @@ This will atomically set the `value` for a specific `key` and return `true` if t
 Phew! This is _a lot_ of information, and the problem we're trying to solve isn't that complicated. The important things to note:
 * Concurrency Utilities are not always drop in solutions.
 * There are a lot of ways to fence memory access, many of which are inefficient.
-	* **NOTE:** Inefficiency may not a major problem in certain cases (not much thread contention), but for most of the exercises in these posts, we'll assume we need to maximize efficiency.
+    * **NOTE:** Inefficiency may not a major problem in certain cases (not much thread contention), but for most of the exercises in these posts, we'll assume we need to maximize efficiency.
 * There can exist **many** concurrency primitives, collections, and utilities designed to _assist_ the developer, but they can take years to master and this knowledge doesn't always transfer across platforms and languages. 
 
 Modern day languages  are moving towards "getting off the ground" quickly with emphasis on fast iteration. Spending countless hours trying to build an application relying on awkward concurrency design patterns does not meet this criteria, and as such, the object oriented concurrency primitives are slowly becoming a thing of the past. So, given all of the pitfalls we're aware of, what approach could be taken to make things better?
