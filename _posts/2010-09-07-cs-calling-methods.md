@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Calling Methods and Properties by String in C#
+tags: c#
 ---
 One of my favorite things about C# is the strict typing. Strict typing forces the user to follow good design principles (most of the time). However, it does prevent you from being able to use "true" dynamic objects (Note: there are ways that you can use generics and operator overloading to create a "dynamic" object, but they will not be discussed here). And while you can always use the [dynamic](http://msdn.microsoft.com/en-us/library/dd264736.aspx) keyword, you're still unable to call a method by string (like in AS3). When I say "calling a method/property by string," I am referencing the following syntax in AS3:
 ```actionscript

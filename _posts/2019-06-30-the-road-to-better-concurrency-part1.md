@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "The Road to Better Concurrency: Part 1"
+tags: concurrency c#
 redirect_from: 
   - /2019-06-30-concurrency-actors-hollywood-part1
   - /2019-06-30-concurrency-actors-hollywood-part1/

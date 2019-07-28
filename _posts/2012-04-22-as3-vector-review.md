@@ -1,6 +1,7 @@
 ---
 layout: post
 title: After Two Years - AS3 Vector.<T> Review
+tags: as3 data-structures
 ---
 Let me start off initially by saying that this post is pretty much a rant with examples concerning the Flash Platform's `Vector.<T>` class and the mindless semantic differences between it and the `Array` class. I suppose this is a fairly out of date topic, being as the `Vector.<T>` class appeared in the Flash Player 10.0 release. However, I have not noticed any changes or improvements to the APIs since the 10.0 release, and thus the complaining commences:
 

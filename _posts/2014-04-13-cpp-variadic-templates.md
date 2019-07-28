@@ -1,6 +1,7 @@
 ---
 layout: post
 title: C++11 Variadic Templates
+tags: c++ meta-programming
 ---
 
 In recent news, I've been revisiting my programming roots and tinkering with some of the latest C++11 has to offer. There are many new **awesome** features, including [variadic templates](http://en.wikipedia.org/wiki/Variadic_template). These templates give you the ability to define an arbitrary list of types in your template parameters. This removes the need to define N template parameters using specialization. Consider the following naive example tcontainer:
