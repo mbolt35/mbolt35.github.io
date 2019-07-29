@@ -2,6 +2,7 @@
 layout: post
 title: JavaRay - Specular Fix
 image: /img/specular-fix.png
+tags: java raytracing
 ---
 Just committed a fairly large update which you can see/read here:
 [https://github.com/mbolt35/javaray/commit/03ad54784c54975216b93174e19db7ee26fd9c0b](https://github.com/mbolt35/javaray/commit/03ad54784c54975216b93174e19db7ee26fd9c0b)

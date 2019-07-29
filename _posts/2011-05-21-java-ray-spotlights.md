@@ -2,6 +2,7 @@
 layout: post
 title: JavaRay - Spotlights
 image: /img/spotlights.png
+tags: java raytracing
 ---
 I've finally gathered enough time to starting writing some more JavaRay code, so I went ahead and finished the Spot Light implementation...
 

@@ -32,14 +32,16 @@ a:hover,
 a:focus {
   color: {{ site.hover-col }};
 }
-.alert {
-    margin-left: -5px;
-    margin-right: 5px;
+
+/* Expand the readable blog section if large enough dimensions */
+@media only screen and (min-width: 899px) and (min-height: 400px) {
+    .blog-post {
+        margin-right: -50px;
+        margin-left: -50px;
+    }
 }
-.blog-post {
-    margin-right: -50px;
-    margin-left: -50px;
-}
+
+/* Regular Block Quote */
 blockquote {
     position: relative;
     color: #606060;
@@ -47,21 +49,11 @@ blockquote {
     font-style: normal;
     border-left: 7.5px solid #86dbff;
 }
-blockquote:before {
-    position: absolute;
-    font-family: 'FontAwesome';
-    font-style: normal;
-    color: #86dbff3F;
-    font-size: 3em;
-    content: '\f10d';
-    top: 50%;
-    transform: translateY(-50%);
-    left: -1.4em;
-}
 blockquote p:first-child {
     margin-top: 0;
 }
 
+/* Informational Block Quote */
 .notequote {
     position: relative;
     color: #606060;
@@ -69,21 +61,11 @@ blockquote p:first-child {
     background-color:#d586ff11;
     border-left: 7.5px solid #d586ff;
 }
-.notequote:before {
-    position: absolute;
-    font-family: 'FontAwesome';
-    font-style: normal;
-    color: #d586ff3F;
-    font-size: 4em;
-    content: '\f05a';
-    top: 50%;
-    transform: translateY(-50%);
-    left: -1.2em;
-}
 .notequote p:first-child {
     margin-top: 0;
 }
 
+/* "Bolt" Styled Block Quote */
 .boltquote {
     position: relative;
     color: #606060;
@@ -91,19 +73,45 @@ blockquote p:first-child {
     background-color:#ffac8611;
     border-left: 7.5px solid #ffac86;
 }
-.boltquote:before {
-    position: absolute;
-    font-family: 'FontAwesome';
-    font-style: oblique;
-    color: #ffac863F;
-    font-size: 4em;
-    content: '\f0e7';
-    top: 50%;
-    transform: translateY(-50%);
-    left: -1em;
-}
 .boltquote p:first-child {
     margin-top: 0;
+}
+
+/* Adds icons to quoteblocks if wide enough */
+@media only screen and (min-width: 899px) {
+    blockquote:before {
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-style: normal;
+        color: #86dbff3F;
+        font-size: 3em;
+        content: '\f10d';
+        top: 50%;
+        transform: translateY(-50%);
+        left: -1.4em;
+    }
+    .notequote:before {
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-style: normal;
+        color: #d586ff3F;
+        font-size: 4em;
+        content: '\f05a';
+        top: 50%;
+        transform: translateY(-50%);
+        left: -1.2em;
+    }
+    .boltquote:before {
+        position: absolute;
+        font-family: 'FontAwesome';
+        font-style: oblique;
+        color: #ffac863F;
+        font-size: 4em;
+        content: '\f0e7';
+        top: 50%;
+        transform: translateY(-50%);
+        left: -1em;
+    }
 }
 
 hr.small {
@@ -175,11 +183,8 @@ img {
 .navbar-custom {
   background-color: {{ site.navbar-col }};
   border-bottom: 1px solid #EAEAEA;
-  font-family: 'Fjord One', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  {% if site.navbar-img %}
-  background-image: url({{ site.navbar-img | relative_url }});
-  background-attachment: fixed;
-  {% endif %}
+  font-family: 'Fjord One', 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+  max-width: 100vw;
 }
 
 .navbar-custom .nav li a {
@@ -213,6 +218,9 @@ img {
   -moz-transition: height .5s ease-in-out;
   transition: height .5s ease-in-out;
 }
+.navbar-custom.top-nav-short {
+    padding: 0;
+}
 .navbar-custom.top-nav-short .navbar-brand-logo {
   padding-top: 5px;
 }
@@ -226,6 +234,10 @@ img {
     -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
+    {% if site.navbar-img %}
+    background-image: url({{ site.navbar-img | relative_url }});
+    background-attachment: fixed;
+    {% endif %}
   }
 
   .navbar-custom.top-nav-short {
