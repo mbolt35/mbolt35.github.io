@@ -12,7 +12,7 @@ My name is Matt Bolt, and I live in Greenville, SC with my wife and 3 kids. I've
 * Borderlands
 * Zelda
 
-I have a deep passion for music, and grew up playing any instrument I could get my hands on. My current favorite is my Taylor acoustic guitar, but I've recently picked up a Chet Atkins SST Les Paul that sounds incredible.
+I have a deep passion for music, and grew up playing any instrument I could get my hands on. My current favorite is my Taylor acoustic guitar, but I've recently picked up a Gibson Chet Atkins SST that sounds incredible.
 
 Overall, I'd say I care a lot about my craft, and while this blog is meant to ultimately push me to write more, I hope it can help others along the way. 
 
